@@ -4,10 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 class CarritoDetalle extends React.Component {
 
-
-  //===============================================================================
-  //                    Constructor
-  //------------------------------------------------------------------------------
+ //::::::::::::::::::::::::::::Constructor::::::::::::::::::::::::::::
   constructor(props) {
     super(props);
     this.state = { //Inicializar variables
@@ -22,16 +19,12 @@ class CarritoDetalle extends React.Component {
       },
     };
   }
-  //==============================================================================
-  //                    Component Will Mount
-  //------------------------------------------------------------------------------
+   //::::::::::::::::::::::::::::Component Will Mount::::::::::::::::::::::::::::
   componentWillMount(){
     this.subtotal(this.props.precio, this.props.cantidad)
     this.setState({listaProductos : JSON.parse(sessionStorage.getItem('Carrito'))})
   }
-  //==============================================================================
-  //                    Render
-  //------------------------------------------------------------------------------
+  //::::::::::::::::::::::::::::Render::::::::::::::::::::::::::::
   render() {
     return (
       <div className="col s12 animated fadeIn fast">
@@ -69,13 +62,13 @@ class CarritoDetalle extends React.Component {
 
     )
   }
-  //======================EventListener para campo de busqueda====================
+ //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
   updateInputValue(evt) {
     this.setState({
       inputValue: evt.target.value
     });
   }
-  //==============================================================================
+ //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
   subtotal(precio, cantidad){
     let subtotal = Number(cantidad) * Number(precio);
     this.setState({subtotal : subtotal})
