@@ -10,13 +10,6 @@ import * as firebase from 'firebase';
     projectId: "tienda-angular2",
     storageBucket: "tienda-angular2.appspot.com",
     messagingSenderId: "529996794003"
-    /*apiKey: "AIzaSyBnc-RTgUNfg9tIbw3Ln3SoON-DNiNtQTk",
-    authDomain: "tiendavirtual-79d9f.firebaseapp.com",
-    databaseURL: "https://tiendavirtual-79d9f.firebaseio.com",
-    projectId: "tiendavirtual-79d9f",
-    storageBucket: "tiendavirtual-79d9f.appspot.com",
-    messagingSenderId: "1028553054475",
-    appId: "1:1028553054475:web:ad5ac72afe2aad9d"*/
   };
   firebase.initializeApp(config);
 

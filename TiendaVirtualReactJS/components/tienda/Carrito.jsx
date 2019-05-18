@@ -62,7 +62,7 @@ class Carrito extends React.Component{
             <BarraNavegacion contador={this.contadorCarrito()}/>
             <div className="animated fadeIn slow">
               <div className="box white col s12 center-align" style={{padding: '5%'}}>
-                <h5  style={{height : '70vh', display : 'table-cell', verticalAlign : 'middle'}} >Debes agregar productos al carrito de compras. Vuelve a <Link to="/tienda">La Bodega</Link></h5>
+                <h5  style={{height : '70vh', display : 'table-cell', verticalAlign : 'middle'}} >Debes agregar productos al carrito de compras. Vuelve a <Link to="/tienda">FruverShop</Link></h5>
               </div>
             </div>
           </div>

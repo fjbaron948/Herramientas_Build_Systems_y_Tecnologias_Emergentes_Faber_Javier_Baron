@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, NavLink , IndexRoute, Link } from 'reac
 class Main extends React.Component{
   render(){
       return(
-          <nav className="blue darken-1">
+          <nav className="#00e676 green accent-3">
             <div className="nav-wrapper">
-              <Link to="/tienda" className="brand-logo text-shadow"><i className="material-icons"></i><p> LaBodega</p></Link>
+              <Link to="/tienda" className="brand-logo text-shadow"><i className="material-icons"></i><p> FruverShop</p></Link>
               <ul className="right">
                 <li><NavLink  to="/tienda" activeClassName="active" className="text-shadow"><i className="material-icons">apps</i></NavLink ></li>
                 <li><NavLink  to="/carrito" activeClassName="active" className="text-shadow"><i className="material-icons">shopping_cart</i><span hidden={(this.props.contador > 0) ? false : true } className="item-counter">{this.props.contador}</span></NavLink ></li>
