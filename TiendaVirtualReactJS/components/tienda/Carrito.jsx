@@ -6,9 +6,7 @@ import BarraNavegacion from './BarraNavegacion.jsx';
 import CarritoDetalle from './CarritoDetalle.jsx'
 
 class Carrito extends React.Component{
-  //===============================================================================
-  //                    Constructor
-  //------------------------------------------------------------------------------
+ //::::::::::::::::::::::::::::Constructor::::::::::::::::::::::::::::
   constructor(props) {
     super(props)
     this.state = {
@@ -20,15 +18,11 @@ class Carrito extends React.Component{
     }
     this.vaciarCarrito = this.vaciarCarrito.bind(this)
   }
-  //==============================================================================
-  //                    Component Will Mount
-  //------------------------------------------------------------------------------
+  //::::::::::::::::::::::::::::Component Will Mount::::::::::::::::::::::::::::
   componentWillMount(){
     this.setState({listaCarrito : JSON.parse(sessionStorage.getItem('Carrito')) ? JSON.parse(sessionStorage.getItem('Carrito')) : '[]' })
   }
-  //============================================================================
-  //                    Render
-  //----------------------------------------------------------------------------
+  //::::::::::::::::::::::::::::Render::::::::::::::::::::::::::::
   render(){
     if(!sessionStorage.getItem('Session')){
       return <Redirect to="/" />
@@ -78,16 +72,14 @@ class Carrito extends React.Component{
       return <Redirect to="/tienda"/>; //Redireccionar a la tienda
     }
   }
-  //==============================================================================
-  //                    Funciones
-  //----------------------Mostrar items en carrito=-------------------------------
+ //::::::::::::::::::::::::::::Funciones::::::::::::::::::::::::::::
+ //::::::::::::::::::::::::::::Mostrar items en carrito::::::::::::::::::::::::::::
   mostrarCarrito(){
     return this.state.listaCarrito.map(
       (producto) => { return <CarritoDetalle key={ producto.id } id={producto.id}  descripcion={ producto.descripcion } imagen={ producto.imagen } descripcion={ producto.descripcion } cantidad={ producto.cantidad } precio ={producto.precio} actualizarDisponible={this.actualizarDisponible.bind(this)}/> }
     )
   }
-  //==============================================================================
-  //                    Verificar items en carrito
+  //::::::::::::::::::::::::::::Verificar items en carrito::::::::::::::::::::::::::::
   itemsCarrito(){
     if(sessionStorage.getItem("Carrito")){                                    //Verificar si la sesión del carrito contiene información
       this.state.listaCarrito = JSON.parse(sessionStorage.getItem("Carrito")); //Actualizar la información del carrito con la sesión actual en formato JSON
@@ -95,13 +87,12 @@ class Carrito extends React.Component{
     }
     return 0;                                                                  //Devolver 0 si no existen carritos
   }
-  //--------------------Contador de items en menu---------------------------------
+   //::::::::::::::::::::::::::::Contador de items en menu::::::::::::::::::::::::::::
   contadorCarrito(){
     return this.itemsCarrito().length //Contar la cantidad de items en el carrito
   }
-  //=============================================================================
-  //             Guardar Items en el carrito
-  //--------------Actualizar Disponible------------------------------------------
+ //::::::::::::::::::::::::::::Guardar Items en el carrito::::::::::::::::::::::::::::
+//::::::::::::::::::::::::::::Actualizar Disponible::::::::::::::::::::::::::::
   actualizarDisponible(item:Object, cantidad:Number, remover:Boolean = false){
     for (let productoLista of this.state.listaCarrito){
       if (productoLista.id == item.id){
@@ -114,17 +105,17 @@ class Carrito extends React.Component{
     sessionStorage.setItem("Carrito", JSON.stringify(this.state.listaCarrito))
     this.setState({listaCarrito : this.state.listaCarrito})
   }
-  //---------------Remover item del carrito--------------------------------------
+   //::::::::::::::::::::::::::::Remover item del carrito::::::::::::::::::::::::::::
   removerItem(item){
     let index = this.state.listaCarrito.findIndex(producto => producto.id === item.id)
     let newArray =   this.state.listaCarrito.splice(index, 1)
   }
-  //-----------------Vaciar los items del carrito------------------------------------
+   //::::::::::::::::::::::::::::Vaciar los items del carrito::::::::::::::::::::::::::::
   vaciarCarrito(){
     this.setState({listaCarrito : []})
     sessionStorage.setItem('Carrito', '[]') //Asignar como parámetro un array vacío en formato string a la sesion Carrito
   }
-  //==============Calcular Totales================================================
+   //::::::::::::::::::::::::::::Calcular Totales::::::::::::::::::::::::::::
   total(){
     let total :number = 0 //Inicializar los totales
     let items = this.state.listaCarrito; //Iniciar la variable items con los items actuales en el carrito
@@ -133,7 +124,7 @@ class Carrito extends React.Component{
     }
     return total; //Devolver el valor de la suma total de todos lso subtotales del producto
   }
-  //=============Pagar Carrito==================================================
+   //::::::::::::::::::::::::::::Pagar Carrito::::::::::::::::::::::::::::
   pagarCarrito(){
     const listaCarrito = this.state.listaCarrito                                   //Definir la constante lista carrito
     this.setState({ pagar : true})
