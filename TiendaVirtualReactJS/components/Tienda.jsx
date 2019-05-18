@@ -15,14 +15,12 @@ constructor(props) {
       productos: [],
       listaCarrito : [],
     }
-    /*this.filtrarCatalogo = this.filtrarCatalogo.bind(this);
-    this.actualizarDisponible = this.actualizarDisponible.bind(this)
-    this.obtenerCantidad = this.obtenerCantidad.bind(this)*/
+
 }
 
-  render(){
-    return(
-     <p>test</p>
+render(){
+  return(
+    <p>test</p>
     )
   }
 
