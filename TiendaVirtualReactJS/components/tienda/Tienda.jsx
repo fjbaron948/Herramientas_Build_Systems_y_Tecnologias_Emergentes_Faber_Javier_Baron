@@ -45,7 +45,7 @@ class Tienda extends React.Component{
             <h4 className="col m6 s12 white-text left ">Cátalogo de productos</h4>
             <h4 className="right col m6 s12 input-field">
             <i className="material-icons prefix white-text">search</i>
-            <input onChange={this.filtrarCatalogo.bind(this)} type="text" id="descripcion" placeholder="fresa"  type="text" className="white-text no-margin-bottom"/>
+            <input onChange={this.filtrarCatalogo.bind(this)} type="text" id="descripcion"  type="text" className="white-text no-margin-bottom"/>
             <label htmlFor="descripcion" className="white-text">¿Qué estás buscando?</label>
             </h4>
           </div>
