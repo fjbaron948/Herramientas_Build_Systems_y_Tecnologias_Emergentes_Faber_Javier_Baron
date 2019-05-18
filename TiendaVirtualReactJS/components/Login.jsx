@@ -65,7 +65,7 @@ class LoginForm extends React.Component{
     this.setState({mensaje : mensajeLogin});
     console.log(mensajeLogin)
   }
-//::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
+//::::::::::::::::::::::::::::Render::::::::::::::::::::::::::::
     render(){
     if (this.checkSession()){
       return <Redirect to='/tienda'/>

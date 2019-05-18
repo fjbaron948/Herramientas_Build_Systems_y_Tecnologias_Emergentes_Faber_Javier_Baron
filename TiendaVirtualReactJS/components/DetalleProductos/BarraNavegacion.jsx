@@ -11,7 +11,7 @@ class BarraNavegacion extends React.Component{
         return(
           <nav>
             <div className="nav-wrapper">
-              <a className="brand-logo text-shadow" href="#"><p>La Bodega</p></a>
+              <a className="brand-logo text-shadow" href="#"><p>FruverShop</p></a>
               <ul className="right">
                  <li><Link to="/" className="text-shadow active"> <i className="material-icons">apps</i></Link></li>
                  <li><Link to="/tienda" className="text-shadow active"><i className="material-icons">shopping_cart</i><span className="item-counter">10</span></Link></li>
