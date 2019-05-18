@@ -8,7 +8,7 @@ class NotFound extends React.Component{
     this.state = {
     }
   }
-  //--------------------------------------------------------------
+ //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
   componentWillMount(){
   }
   render(){
@@ -33,7 +33,7 @@ class NotFound extends React.Component{
     )
   }
 
-  //------------------------------------------------------------------------------
+//::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
 
   itemsCarrito(){
     if(sessionStorage.getItem("Carrito")){
@@ -42,7 +42,7 @@ class NotFound extends React.Component{
     }
     return 0;
   }
-  //--------------------Contador de items en menu---------------------------------
+  ////::::::::::::::::::::::::::::Contador de items en menu::::::::::::::::::::::::::::
   contadorCarrito(){
     return this.itemsCarrito().length
   }

@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import * as firebase from 'firebase';
 import * as request from 'superagent';
 import {  BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
-//-------------------------------------------------------
+//::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
 import LoginFirebase from './FirebaseDB.jsx';
-//-------------------------------------------------------
+//::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
 
 const USUARIODB = firebase.database().ref().child('usuarios')
 
@@ -20,11 +20,11 @@ class LoginForm extends React.Component{
     this.handleChange = this.handleChange.bind(this);
     this.checkLogin = this.checkLogin.bind(this);
   }
-//-----------------------------------------------------------
+//::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
   checkSession(){
     return sessionStorage.getItem("Session");
   }
-//--------------------------------------------------------------
+//::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
   handleChange(event) {
     if(event.target.id == "email"){
       this.setState({email: event.target.value});
@@ -33,7 +33,7 @@ class LoginForm extends React.Component{
         this.setState({password: event.target.value});
     }
   }
-//-----------------------------------------------------------------------------
+//::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
   checkLogin(event) {
     event.preventDefault();
 
@@ -65,7 +65,7 @@ class LoginForm extends React.Component{
     this.setState({mensaje : mensajeLogin});
     console.log(mensajeLogin)
   }
-//------------------------------------------------------------------------------
+//::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
     render(){
     if (this.checkSession()){
       return <Redirect to='/tienda'/>
