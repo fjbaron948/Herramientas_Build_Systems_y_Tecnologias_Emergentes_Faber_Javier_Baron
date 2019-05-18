@@ -6,9 +6,7 @@ import BarraNavegacion from './tienda/BarraNavegacion.jsx';
 //import CatalogoRow from './tienda/CatalogoRow.jsx';
 import Catalogo from './tienda/Catalogo.jsx';
 
-
 class Tienda extends React.Component{
-
 
 constructor(props) {
   super(props)
@@ -21,8 +19,6 @@ constructor(props) {
     this.actualizarDisponible = this.actualizarDisponible.bind(this)
     this.obtenerCantidad = this.obtenerCantidad.bind(this)*/
 }
-
-
 
   render(){
     return(
