@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, browserHistory, Link, Switch } from 'react-router-dom'
 import {IntlProvider, FormattedMessage} from 'react-intl';
-//=================Importar Componentes======================
+// //::::::::::::::::::::::::::::Importar Componentes::::::::::::::::::::::::::::
 
 import LoginForm from './components/Login.jsx';
 import Tienda from './components/tienda/Tienda.jsx';
