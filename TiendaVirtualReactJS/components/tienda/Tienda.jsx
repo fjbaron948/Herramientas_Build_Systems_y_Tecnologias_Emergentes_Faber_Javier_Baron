@@ -1,10 +1,10 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import * as firebase from 'firebase';
-//=========Importar Componentes=========================
+  //::::::::::::::::::::::::::::Importar Componentes::::::::::::::::::::::::::::
 import BarraNavegacion from './BarraNavegacion.jsx';
 import Catalogo from './Catalogo.jsx';
-//======================================================
+  //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
 class Tienda extends React.Component{
   constructor(props) {
     super(props)
@@ -16,7 +16,7 @@ class Tienda extends React.Component{
     }
     this.actualizarDisponible = this.actualizarDisponible.bind(this)
   }
-  //-------------------------------------------------------------------------------
+  //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
   componentWillMount(){
       const listaProductos = []
       firebase.database().ref("productos").once("value").then((snapshot) => {
@@ -30,7 +30,7 @@ class Tienda extends React.Component{
       })
   }
 
-  //------------------------------------------------------------------------------
+  //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
   render(){
   if(!sessionStorage.getItem('Session')){
     return <Redirect to="/" />
@@ -57,13 +57,13 @@ class Tienda extends React.Component{
       </div>
     )
   }
-  //------------------------------------------------------------------------------
+  //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
   mostrarProductos(){
     return this.state.productos.map(
       (producto) => { return <Catalogo actualizarDisponible={this.actualizarDisponible} productos={this.state.productos} key={ producto.id } id={producto.id}  nombre={ producto.nombre } imagen={ producto.imagen } descripcion={ producto.descripcion } disponible={ producto.disponible } precio ={producto.precio} /> }
     )
   }
-  //----------------------------------------------------------------------------
+  //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
   filtrarCatalogo(event){
     this.state.productos = this.state.catalogo;
     let palabraFiltro = event.target.value.toLowerCase();
@@ -79,7 +79,7 @@ class Tienda extends React.Component{
         this.state.productos = []
       }
     }
-    //--------------------------------------------------------
+  //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
     actualizarDisponible(item, cantidad){
       for (let productoLista of this.state.productos){
         if (productoLista.id == item.id){
@@ -90,7 +90,7 @@ class Tienda extends React.Component{
         }
       }
     }
-    //-------------------------------------------------------------
+  //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
     verificarCarrito(item, cantidad){
       if(this.guardarCarrito(item, cantidad) == false){
         this.state.listaCarrito.push(item)
@@ -98,7 +98,7 @@ class Tienda extends React.Component{
       this.setState({listaCarrito : this.state.listaCarrito})
       sessionStorage.setItem("Carrito", JSON.stringify(this.state.listaCarrito));
     }
-    //-------------------------------------------------------------
+    //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
     guardarCarrito(item, cantidad){
       if(this.state.listaCarrito.length > 0){
         for(let itemGuardado of this.state.listaCarrito){
@@ -111,7 +111,7 @@ class Tienda extends React.Component{
       }
       return false;
     }
-    //-------------------------------------------------------------
+  //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
 
     itemsCarrito(){
       if(sessionStorage.getItem("Carrito")){
@@ -120,7 +120,7 @@ class Tienda extends React.Component{
       }
       return 0;
     }
-    //--------------------Contador de items en menu---------------------------------
+    //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
     contadorCarrito(){
       return this.itemsCarrito().length
     }
