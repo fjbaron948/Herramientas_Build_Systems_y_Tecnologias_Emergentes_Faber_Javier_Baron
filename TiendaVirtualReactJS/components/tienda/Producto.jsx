@@ -20,9 +20,7 @@ class Producto extends React.Component{
         refresh: false
       }
     }
-    //==============================================================================
-    //                    Component Will Mount
-    //------------------------------------------------------------------------------
+    //::::::::::::::::::::::::::::Component Will Mount::::::::::::::::::::::::::::
     componentWillMount(){
     const { idProducto } = this.props.match.params;
       const listaProductos = []
@@ -42,9 +40,7 @@ class Producto extends React.Component{
       }
       this.navegacion(idProducto);
     }
-    //==============================================================================
-    //                    Render
-    //------------------------------------------------------------------------------
+    //::::::::::::::::::::::::::::Render::::::::::::::::::::::::::::
     render() {
         return(
         <div className="tienda row">
@@ -76,10 +72,7 @@ class Producto extends React.Component{
       )
     }
 
-
-    //==============================================================================
-    //                    Verificar items en carrito
-    //------------------------------------------------------------------------------
+    //::::::::::::::::::::::::::::Verificar items en carrito::::::::::::::::::::::::::::
     itemsCarrito(){
       if(sessionStorage.getItem("Carrito")){
         this.state.listaCarrito = JSON.parse(sessionStorage.getItem("Carrito"));
@@ -87,13 +80,12 @@ class Producto extends React.Component{
       }
       return 0;
     }
-    //--------------------Contador de items en menu---------------------------------
+    //::::::::::::::::::::::::::::Contador de items en menu::::::::::::::::::::::::::::
     contadorCarrito(){
       return this.itemsCarrito().length //Contar la cantidad de items en el carrito
     }
-    //=============================================================================
-    //             Guardar Items en el carrito
-    //--------------Actualizar Disponible------------------------------------------
+    //::::::::::::::::::::::::::::Guardar Items en el carrito::::::::::::::::::::::::::::
+    //::::::::::::::::::::::::::::Actualizar Disponible::::::::::::::::::::::::::::
     actualizarDisponible(item, cantidad){
       for (let productoLista of this.state.producto){
         if (productoLista.id == item.id){
@@ -104,8 +96,7 @@ class Producto extends React.Component{
         }
       }
     }
-
-    //-------------Verificar Carrito------------------------------------------------
+    //::::::::::::::::::::::::::::Verificar Carrito::::::::::::::::::::::::::::
     verificarCarrito(item, cantidad){
       if(this.guardarCarrito(item, cantidad) == false){
         this.state.listaCarrito.push(item)
@@ -113,7 +104,7 @@ class Producto extends React.Component{
       this.setState({listaCarrito : this.state.listaCarrito})
       sessionStorage.setItem("Carrito", JSON.stringify(this.state.listaCarrito));
     }
-    //------------Agregar a Carrito-------------------------------------------------
+    //::::::::::::::::::::::::::::Agregar a Carrito::::::::::::::::::::::::::::
     guardarCarrito(item, cantidad){
       if(this.state.listaCarrito.length > 0){
         for(let itemGuardado of this.state.listaCarrito){

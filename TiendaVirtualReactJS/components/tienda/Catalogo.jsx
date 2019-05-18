@@ -7,11 +7,11 @@ import BarraNavegacion from './BarraNavegacion.jsx';
 
 class Catalogo extends React.Component {
 
- //::::::::::::::::::::::::::::Component Will Mount::::::::::::::::::::::::::::
+  //::::::::::::::::::::::::::::Component Will Mount::::::::::::::::::::::::::::
   componentWillMount(){
     this.checkCarrito(this.props.id);
   }
- //::::::::::::::::::::::::::::Constructor::::::::::::::::::::::::::::
+  //::::::::::::::::::::::::::::Constructor::::::::::::::::::::::::::::
   constructor(props) {
     super(props);
     this.state = { //Inicializar los estados de las variables
