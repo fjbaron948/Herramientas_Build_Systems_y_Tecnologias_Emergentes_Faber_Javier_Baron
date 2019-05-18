@@ -41,8 +41,8 @@ class Tienda extends React.Component{
       <div className="container">
         <BarraNavegacion contador={this.contadorCarrito()}/>
         <div className="left lista-productos box">
-          <div className="col s12 blue darken-1 animated fadeInDown fast">
-            <h4 className="col m6 s12 white-text left ">Cátalogo de productos</h4>
+          <div className="col s12 #ff6f00 amber darken-4 animated fadeInDown fast">
+            <h5 className="col m6 s12 white-text left ">Cátalogo de productos</h5>
             <h4 className="right col m6 s12 input-field">
             <i className="material-icons prefix white-text">search</i>
             <input onChange={this.filtrarCatalogo.bind(this)} type="text" id="descripcion"  type="text" className="white-text no-margin-bottom"/>

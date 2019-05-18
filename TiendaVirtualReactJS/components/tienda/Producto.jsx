@@ -48,7 +48,7 @@ class Producto extends React.Component{
             <BarraNavegacion contador={this.contadorCarrito()}/>
             <div className="col s12 box carrito blue darken-1">
             <h5 className="left">
-              <Link to='/tienda' className='white-text'>Tienda</Link><span className="white-text "> > {this.state.producto.map((producto)=>producto.descripcion)} </span>
+              <Link to='/tienda' className='white-text'>Tienda</Link><span className="white-text"> > {this.state.producto.map((producto)=>producto.descripcion)} </span>
             </h5>
             <h5 className="right">
                 <Link to={`/producto/${this.state.atras}`} onClick={() => this.setState({refresh : true}).bind(this)} className="btn btn-secondary left"  disabled={(this.state.siguiente === 1 ) ? true : false} >  <i className="material-icons">keyboard_arrow_left</i> </Link>
