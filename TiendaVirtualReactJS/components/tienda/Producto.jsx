@@ -133,19 +133,9 @@ class Producto extends React.Component{
  }
 export default Producto;
 
-
-
-
-
-
-
-
-
 class DetalleProducto extends React.Component{
 
-//===============================================================================
-//                    Constructor
-//------------------------------------------------------------------------------
+ //::::::::::::::::::::::::::::Constructor::::::::::::::::::::::::::::
 constructor(props) {
   super(props);
   this.state = { //Inicializar variables
@@ -165,16 +155,12 @@ constructor(props) {
         siguiente : this.props.siguiente,
       };
 }
-//==============================================================================
-//                    Component Will Mount
-//------------------------------------------------------------------------------
+//::::::::::::::::::::::::::::Component Will Mount::::::::::::::::::::::::::::
 componentWillMount(){
       this.checkCarrito(this.props.producto);
       this.props.navegacion(this.props.producto.id);
 }
-//==============================================================================
-//                    Render
-//------------------------------------------------------------------------------
+//::::::::::::::::::::::::::::Render::::::::::::::::::::::::::::
   render(){
   if(!sessionStorage.getItem('Session')){
     return <Redirect to="/" />
@@ -210,10 +196,8 @@ componentWillMount(){
     )
   }
 
-  //==============================================================================
-  //                    Funciones
-  //------------------------------------------------------------------------------
-  //--------------------Agregar Productos-----------------------------------------
+//::::::::::::::::::::::::::::Funciones::::::::::::::::::::::::::::
+//::::::::::::::::::::::::::::Agregar Producto::::::::::::::::::::::::::::
     agregarProducto(){
        let cantidad = this.state.inputValue;
        const producto = this.props.producto;
@@ -236,14 +220,13 @@ componentWillMount(){
          this.props.actualizarDisponible(this.state.productoCarrito, cantidad, false);
        }
     }
-  //------------------------------------------------------------------------------
-  //======================EventListener para campo de cantidades====================
+ //::::::::::::::::::::::::::::EventListener para campo de cantidades::::::::::::::::::::::::::::
     updateInputValue(evt) {
       this.setState({
         inputValue: evt.target.value
       });
     }
-  //---------------------Verificar carrito----------------------------------------
+  //::::::::::::::::::::::::::::Verificar carrito::::::::::::::::::::::::::::
     checkCarrito(producto){
       for(let itemCarrito of this.state.listaCarrito){ //Recorrer el arreglo de productos almacenados en el carrito
         if(itemCarrito.id == producto.id){
@@ -252,5 +235,4 @@ componentWillMount(){
         }
       }
     }
-  //------------------------------------------------------------------------------
 }

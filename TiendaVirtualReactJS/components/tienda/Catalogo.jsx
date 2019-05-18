@@ -58,7 +58,6 @@ class Catalogo extends React.Component {
     )
   }
 
-
 //::::::::::::::::::::::::::::Funciones::::::::::::::::::::::::::::
 //::::::::::::::::::::::::::::Agregar Producto::::::::::::::::::::::::::::
   agregarProducto(){
