@@ -35,44 +35,6 @@ class App extends React.Component{
       </div>
     )
   }
-    //::::::::::::::::::::::::::::**-------**::::::::::::::::::::::::::::
-    //             Guardar Items en el carrito
-    //--------------Actualizar Disponible------------------------------------------
-    /*actualizarDisponible(item, cantidad, devolver:booleran = false){
-      for (let productoLista of this.state.productos){
-        if (productoLista.id == item.id){
-          if(devolver == false){
-            this.verificarCarrito(item, cantidad)
-            productoLista.disponible = (Number(productoLista.disponible) - Number(cantidad))
-          }
-          else{
-            productoLista.disponible = (Number(productoLista.disponible) + Number(cantidad))
-          }
-          this.setState({productos : this.state.productos})
-          this.setState({listaCarrito : this.state.listaCarrito})
-          this.contadorCarrito()
-        }
-      }
-    }*/
-
-    //-------------------------------------------------------------
-    /*verificarCarrito(item, cantidad){
-      if(this.guardarCarrito(item, cantidad) == false){
-        this.state.listaCarrito.push(item)
-      }
-      sessionStorage.setItem("Carrito", JSON.stringify(this.state.listaCarrito));
-    }
-    //-----------------------------------------------------
-    itemsCarrito(){
-      if(sessionStorage.getItem("Carrito")){
-        //this.state.listaCarrito = JSON.parse(sessionStorage.getItem("Carrito"));
-        return JSON.parse(sessionStorage.getItem("Carrito"));
-      }
-      return [];
-    }*/
-    //-----------------------------------------------------
-    /*contadorCarrito(){
-      return this.itemsCarrito().length
-    }*/
+  
   }
-  export default App;
+export default App;
