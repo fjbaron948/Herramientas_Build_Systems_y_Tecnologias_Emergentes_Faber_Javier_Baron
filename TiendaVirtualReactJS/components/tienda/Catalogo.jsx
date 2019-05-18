@@ -7,15 +7,11 @@ import BarraNavegacion from './BarraNavegacion.jsx';
 
 class Catalogo extends React.Component {
 
-//==============================================================================
-//                    Component Will Mount
-//------------------------------------------------------------------------------
+ //::::::::::::::::::::::::::::Component Will Mount::::::::::::::::::::::::::::
   componentWillMount(){
     this.checkCarrito(this.props.id);
   }
-//===============================================================================
-//                    Constructor
-//------------------------------------------------------------------------------
+ //::::::::::::::::::::::::::::Constructor::::::::::::::::::::::::::::
   constructor(props) {
     super(props);
     this.state = { //Inicializar los estados de las variables
@@ -32,9 +28,7 @@ class Catalogo extends React.Component {
         },
     };
   }
-//==============================================================================
-//                    Render
-//------------------------------------------------------------------------------
+ //::::::::::::::::::::::::::::Render::::::::::::::::::::::::::::
   render() {
     return (
         <div className="col s12 m4 l3 animated fadeIn fast">
@@ -65,10 +59,8 @@ class Catalogo extends React.Component {
   }
 
 
-//==============================================================================
-//                    Funciones
-//------------------------------------------------------------------------------
-//--------------------Agregar Productos-----------------------------------------
+//::::::::::::::::::::::::::::Funciones::::::::::::::::::::::::::::
+//::::::::::::::::::::::::::::Agregar Producto::::::::::::::::::::::::::::
   agregarProducto(){
      let cantidad = this.state.inputValue
      if (cantidad <=0) {
@@ -90,14 +82,13 @@ class Catalogo extends React.Component {
        this.props.actualizarDisponible(this.state.productoCarrito, cantidad, false);
      }
   }
-//------------------------------------------------------------------------------
-//======================EventListener para campo de cantidades====================
+ //::::::::::::::::::::::::::::EventListener para campo de cantidades::::::::::::::::::::::::::::
   updateInputValue(evt) {
     this.setState({
       inputValue: evt.target.value
     });
   }
-//---------------------Verificar carrito----------------------------------------
+//::::::::::::::::::::::::::::Verificar carrito::::::::::::::::::::::::::::
   checkCarrito(id){
     let productoCarrito = this.props
     for(let itemCarrito of this.state.listaCarrito){ //Recorrer el arreglo de productos almacenados en el carrito
@@ -108,6 +99,5 @@ class Catalogo extends React.Component {
       //(itemCarrito.id, itemCarrito.cantidad); //Actualizar las cantidades de los productos a agregar en el carrito
     }
   }
-//------------------------------------------------------------------------------
 
 }export default Catalogo
